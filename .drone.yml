@@ -5,7 +5,8 @@ steps:
   - name: flake8
     image: python:3.7    
     commands:
-      - python -c print("123")    
+      - echo 'print("123")' > my_script.py  # 创建一个Python脚本文件
+      - python my_script.py  # 运行Python脚本文件    
     when:      
       event:      
         - push      
